@@ -16,7 +16,7 @@ const { ApolloServerPluginDrainHttpServer } = require("apollo-server-core");
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/graphQl")
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Mongo DB connected!!");
   })
