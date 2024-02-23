@@ -1,4 +1,5 @@
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 
 const { createServer } = require("http");
 const { subscribe, execute } = require("graphql");
@@ -15,7 +16,7 @@ const { ApolloServerPluginDrainHttpServer } = require("apollo-server-core");
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(process.env.MONGO_URL + "/graphQl")
+  .connect("mongodb://127.0.0.1:27017/graphQl")
   .then(() => {
     console.log("Mongo DB connected!!");
   })
@@ -69,7 +70,5 @@ mongoose
   server.applyMiddleware({ app });
 
   await new Promise((resolve) => httpServer.listen({ port: PORT }, resolve));
-  console.log(
-    `Server ready at  https://kukduku.onrender.com:${PORT}${server.graphqlPath}`
-  );
+  console.log(`Server ready at  http://localhost:${PORT}${server.graphqlPath}`);
 })(typeDefs, resolvers);
