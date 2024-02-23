@@ -14,7 +14,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
 const httpLink = createHttpLink({
-  uri: "https://kukduku.onrender.com:5000/graphql",
+  uri: "https://kukduku.onrender.com:10000/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
