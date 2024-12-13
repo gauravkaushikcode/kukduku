@@ -17,10 +17,10 @@
 
 - Take latest pull using `git pull origin main`
 - Run a local instance of MongoDB with port '27017'
-- Move to frontend folder using `cd frontend`
+- Move to frontend folder using `cd client`
 - Install all dependencied `npm i`
 - Start frontend using `npm start`
-- Move to backend folder `cd backend`
+- Move to backend folder `cd server`
 - Install all dependencied `npm i`
 - Start backend using `npm start`
 
